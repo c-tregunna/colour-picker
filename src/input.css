@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+    .recipe-container > div {
+        @apply w-full p-3 border border-gray-300 rounded my-5 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow md:w-2/5 lg:w-1/5;
+    }
+    .checkbox-wrapper {
+        @apply w-52 flex justify-between;
+    }
+    .recipe-type-wrapper {
+      @apply py-6 border-b md:border-b-0 md:border-r md:px-6 md:last-of-type:border-r-0 md:first-of-type:border-r-0 md:first-of-type:border-b md:mt-4;
+    }
+    .recipe-type-wrapper > h3 {
+        @apply text-xl mb-4 text-center;
+    }
+    ol > li {
+        @apply py-1 px-2 last-of-type:font-semibold ;
+    }
+    .see-more {
+        @apply line-clamp-none;
+    }
+  }
+
+
