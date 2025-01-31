@@ -3,17 +3,12 @@ module.exports = {
   content: ["./*.{html,js}",
             "./node_modules/flowbite/**/*.js"
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
-        },
-      backgroundImage: {
-        bg_hero_one: 'url("assets/recipe-hero-images.png")'
-      },
-      colors: {
-        'slate-rgba': 'rgba(226, 232, 240, .70)',
-      }
+        }
        },
     plugins: [
       require('flowbite/plugin')
