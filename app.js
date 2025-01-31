@@ -5,9 +5,9 @@ const colorPicker = document.getElementById('color-picker')
 const modeSelection = document.getElementById('mode-selection')
 
 function renderColors() {
-    const pickedColor = colorPicker.value
+    const pickedColor = colorPicker.value.slice(1) //slice(1) starts string at 1 index, removing the #
     const pickedMode = modeSelection.value
-    fetch(`https://www.thecolorapi.com/scheme?hex=${pickedColor.slice(1)}&mode=${pickedMode}&count=5`) //slice(1) starts string at 1 index, removing the #
+    fetch(`https://www.thecolorapi.com/scheme?hex=${pickedColor}&mode=${pickedMode}&count=5`) 
         .then(res => res.json())
         .then(data => {
             const generateColors = data.colors
@@ -39,3 +39,14 @@ const darkModeBtn = document.getElementById('dark-mode-btn')
 darkModeBtn.addEventListener('click', function(e) {
     document.documentElement.classList.toggle('dark')
 })
+
+function copyHexCode(e) {
+    if(e.target && e.target.tagName === 'DIV') {
+        const hexCode = e.target.textContent.trim() //trim() remove any whitespace before of after text
+        navigator.clipboard.writeText(hexCode)
+        e.target.textContent = "Copied to Clipboard!";
+        setTimeout(() => e.target.textContent = hexCode, 1500); //sets the text back to the hexcode
+    }
+}
+
+hexContainer.addEventListener('click', copyHexCode)
