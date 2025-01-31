@@ -20,7 +20,7 @@ function renderColors() {
 
                 // display the hex colds of the above colours
                 hexContainer.innerHTML += `
-                    <div class="h-1/5 md:w-1/5 md:h-24 flex justify-center items-center">${color.hex.value}</div>
+                    <div class="h-1/5 md:w-1/5 md:h-24 flex justify-center items-center cursor-pointer">${color.hex.value}</div>
                 `
             })
         })
